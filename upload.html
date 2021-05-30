@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Python Flask Multiple Files Upload Example</title>
+	</head>
+	<body>
+		<h2>Select file to upload</h2>
+		<p>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul class=flashes>
+					{% for message in messages %}
+						{% autoescape false %}
+							{{ message }}
+						{% endautoescape %}
+					{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</p>
+		<form method="post" action="/" enctype="multipart/form-data">
+			<dl>
+				<p>
+					<input type="file" name="file" autocomplete="off" required>
+				</p>
+			</dl>
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>File - {{ filename }}</title>
+    </head>
+    <body>
+        <h2>Contents of {{ filename }} with duplicate lines removed:</h2>
+        <p>
+            {% for line in lines %}
+                {{ line }}<br/>
+            {% endfor %}
+        </p>
+    </body>
+</html>
